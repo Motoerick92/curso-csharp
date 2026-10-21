@@ -7,67 +7,32 @@ namespace CursoCSharp
         static void Main(string[] args)
         {
             Console.WriteLine("=== Curso Completo C# 11 + .NET 8 ===");
-            Console.WriteLine("Módulo 2: Variables y tipos de datos\n");
+            Console.WriteLine("Menú de Módulos Disponibles");
+            Console.WriteLine("1. Módulo 1: Setup y Fundamentos");
+            Console.WriteLine("2. Módulo 2: Variables y tipos de datos");
+            Console.WriteLine("3. Módulo 3: Operadores y flujo de control");
+            Console.WriteLine("0. Salir");
 
-            // === 1. TIPOS PRECINTIVOS: ENTEROS ===
-            byte edadUsuario = 25;
-            short numeroCorto = 1000;
-            int idRegistro = 12345;
-            long identificadorGrande = 9223372036854775807L;
+            Console.Write("\nSeleccione un módulo: ");
+            string? opcion = Console.ReadLine();
 
-            Console.WriteLine("--- Tipos Enteros ---");
-            Console.WriteLine($"byte (edad): {edadUsuario}");
-            Console.WriteLine($"short (número): {numeroCorto}");
-            Console.WriteLine($"int (ID): {idRegistro}");
-            Console.WriteLine($"long (grande): {identificadorGrande}");
-
-            // === 2. TIPOS PRECINTIVOS: DECIMALS ===
-            double precioProducto = 19.99;
-            double pi = 3.14159265358979;
-            decimal precioExacto = 19.99m;
-
-            Console.WriteLine("\n--- Tipos Decimales ---");
-            Console.WriteLine($"double (precio): {precioProducto}");
-            Console.WriteLine($"double (PI): {pi}");
-            Console.WriteLine($"decimal (precio exacto): {precioExacto}");
-
-            // === 3. TIPO TEXTO ===
-            string nombreCompleto = "Desarrollador C#";
-            string vacio = "";
-            char inicial = 'D';
-
-            Console.WriteLine("\n--- Tipo Texto ---");
-            Console.WriteLine($"nombre: {nombreCompleto}");
-            Console.WriteLine($"inicial: {inicial}");
-            Console.WriteLine($"longitud nombre: {nombreCompleto.Length}");
-
-            // === 4. TIPO LÓGICO ===
-            bool esDesarrollador = true;
-            bool esPrincipiante = false;
-
-            Console.WriteLine("\n--- Tipo Lógico ---");
-            Console.WriteLine($"esDesarrollador: {esDesarrollador}");
-            Console.WriteLine($"esPrincipiante: {esPrincipiante}");
-
-            // === 5. VARIABLES CON INEFCIÓN DE TIPO ===
-            var anosExperiencia = 7;
-            var esTiempoCompleto = true;
-            var nombreCorto = "C#";
-
-            Console.WriteLine("\n--- Variable `var` ---");
-            Console.WriteLine($"var anos: {anosExperiencia} (tipo: {anosExperiencia.GetType().Name})");
-            Console.WriteLine($"var esFulltime: {esTiempoCompleto} (tipo: {esTiempoCompleto.GetType().Name})");
-            Console.WriteLine($"var nombre: {nombreCorto} (tipo: {nombreCorto.GetType().Name})");
-
-            // === 6. CONSTANTES ===
-            const double IVA = 0.16;
-            const int DIAS_SEMANA = 7;
-            const string MI_NOMBRE = "Curso C#";
-
-            Console.WriteLine("\n--- Constantes ---");
-            Console.WriteLine($"IVA: {IVA}");
-            Console.WriteLine($"Días en semana: {DIAS_SEMANA}");
-            Console.WriteLine($"Mi nombre: {MI_NOMBRE}");
+            switch (opcion)
+            {
+                case "1":
+                    Modulo1Setup.Ejecutar();
+                    break;
+                case "2":
+                    Modulo2Variables.Ejecutar();
+                    break;
+                case "3":
+                    Modulo3OperadoresFlujo.EjemploCompleto();
+                    break;
+                case "0":
+                    return;
+                default:
+                    Console.WriteLine("Opción no válida");
+                    break;
+            }
         }
     }
 }
